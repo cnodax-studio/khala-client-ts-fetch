@@ -13,6 +13,8 @@ import * as runtime from '../runtime';
 import type { ApiV1ChatsChatIdMessagesGet200Response, ApiV1ChatsChatIdMessagesPost200Response, ApiV1ChatsChatIdMessagesPostRequest } from '../models';
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;
+    limit: number;
+    lastMessageId?: string;
 }
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
     chatId: string;

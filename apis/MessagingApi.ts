@@ -30,6 +30,8 @@ import {
 
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;
+    limit: number;
+    lastMessageId?: string;
 }
 
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
@@ -50,7 +52,19 @@ export class MessagingApi extends runtime.BaseAPI {
             throw new runtime.RequiredError('chatId','Required parameter requestParameters.chatId was null or undefined when calling apiV1ChatsChatIdMessagesGet.');
         }
 
+        if (requestParameters.limit === null || requestParameters.limit === undefined) {
+            throw new runtime.RequiredError('limit','Required parameter requestParameters.limit was null or undefined when calling apiV1ChatsChatIdMessagesGet.');
+        }
+
         const queryParameters: any = {};
+
+        if (requestParameters.limit !== undefined) {
+            queryParameters['limit'] = requestParameters.limit;
+        }
+
+        if (requestParameters.lastMessageId !== undefined) {
+            queryParameters['last_message_id'] = requestParameters.lastMessageId;
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
