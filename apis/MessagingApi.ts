@@ -31,7 +31,7 @@ import {
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;
     limit: number;
-    lastMessageId?: string;
+    offset: number;
 }
 
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
@@ -56,14 +56,18 @@ export class MessagingApi extends runtime.BaseAPI {
             throw new runtime.RequiredError('limit','Required parameter requestParameters.limit was null or undefined when calling apiV1ChatsChatIdMessagesGet.');
         }
 
+        if (requestParameters.offset === null || requestParameters.offset === undefined) {
+            throw new runtime.RequiredError('offset','Required parameter requestParameters.offset was null or undefined when calling apiV1ChatsChatIdMessagesGet.');
+        }
+
         const queryParameters: any = {};
 
         if (requestParameters.limit !== undefined) {
             queryParameters['limit'] = requestParameters.limit;
         }
 
-        if (requestParameters.lastMessageId !== undefined) {
-            queryParameters['last_message_id'] = requestParameters.lastMessageId;
+        if (requestParameters.offset !== undefined) {
+            queryParameters['offset'] = requestParameters.offset;
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
