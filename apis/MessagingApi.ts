@@ -34,6 +34,16 @@ export interface ApiV1ChatsChatIdMessagesGetRequest {
     offset: number;
 }
 
+export interface ApiV1ChatsChatIdMessagesMessageIdContentGetRequest {
+    chatId: string;
+    messageId: string;
+}
+
+export interface ApiV1ChatsChatIdMessagesMessageIdGetRequest {
+    chatId: string;
+    messageId: string;
+}
+
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
     chatId: string;
     payload: ApiV1ChatsChatIdMessagesPostRequest;
@@ -91,6 +101,81 @@ export class MessagingApi extends runtime.BaseAPI {
      */
     async apiV1ChatsChatIdMessagesGet(requestParameters: ApiV1ChatsChatIdMessagesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesGet200Response> {
         const response = await this.apiV1ChatsChatIdMessagesGetRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Get message content in specific chat
+     */
+    async apiV1ChatsChatIdMessagesMessageIdContentGetRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdContentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters.chatId === null || requestParameters.chatId === undefined) {
+            throw new runtime.RequiredError('chatId','Required parameter requestParameters.chatId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdContentGet.');
+        }
+
+        if (requestParameters.messageId === null || requestParameters.messageId === undefined) {
+            throw new runtime.RequiredError('messageId','Required parameter requestParameters.messageId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdContentGet.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            queryParameters["token"] = this.configuration.apiKey("token"); // QueryApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/chats/{chat_id}/messages/{message_id}/content`.replace(`{${"chat_id"}}`, encodeURIComponent(String(requestParameters.chatId))).replace(`{${"message_id"}}`, encodeURIComponent(String(requestParameters.messageId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Get message content in specific chat
+     */
+    async apiV1ChatsChatIdMessagesMessageIdContentGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdContentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.apiV1ChatsChatIdMessagesMessageIdContentGetRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Get message in specific chat
+     */
+    async apiV1ChatsChatIdMessagesMessageIdGetRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdMessagesPost200Response>> {
+        if (requestParameters.chatId === null || requestParameters.chatId === undefined) {
+            throw new runtime.RequiredError('chatId','Required parameter requestParameters.chatId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdGet.');
+        }
+
+        if (requestParameters.messageId === null || requestParameters.messageId === undefined) {
+            throw new runtime.RequiredError('messageId','Required parameter requestParameters.messageId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdGet.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/chats/{chat_id}/messages/{message_id}`.replace(`{${"chat_id"}}`, encodeURIComponent(String(requestParameters.chatId))).replace(`{${"message_id"}}`, encodeURIComponent(String(requestParameters.messageId))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1ChatsChatIdMessagesPost200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Get message in specific chat
+     */
+    async apiV1ChatsChatIdMessagesMessageIdGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response> {
+        const response = await this.apiV1ChatsChatIdMessagesMessageIdGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -16,6 +16,14 @@ export interface ApiV1ChatsChatIdMessagesGetRequest {
     limit: number;
     offset: number;
 }
+export interface ApiV1ChatsChatIdMessagesMessageIdContentGetRequest {
+    chatId: string;
+    messageId: string;
+}
+export interface ApiV1ChatsChatIdMessagesMessageIdGetRequest {
+    chatId: string;
+    messageId: string;
+}
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
     chatId: string;
     payload: ApiV1ChatsChatIdMessagesPostRequest;
@@ -32,6 +40,22 @@ export declare class MessagingApi extends runtime.BaseAPI {
      * Get chat messages
      */
     apiV1ChatsChatIdMessagesGet(requestParameters: ApiV1ChatsChatIdMessagesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesGet200Response>;
+    /**
+     * Get message content in specific chat
+     */
+    apiV1ChatsChatIdMessagesMessageIdContentGetRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdContentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Get message content in specific chat
+     */
+    apiV1ChatsChatIdMessagesMessageIdContentGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdContentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     * Get message in specific chat
+     */
+    apiV1ChatsChatIdMessagesMessageIdGetRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdMessagesPost200Response>>;
+    /**
+     * Get message in specific chat
+     */
+    apiV1ChatsChatIdMessagesMessageIdGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response>;
     /**
      * Possible crypt_algorithm: \"none\", \"aes-256-cbc\". Possible compress_algorithm: \"none\", \"zlib-deflate\". <br> Mime must be a valid mime type. Available mime type you cat find here: https://github.com/gabriel-vasile/mimetype/blob/master/supported_mimes.md
      * Send message in specific chat
