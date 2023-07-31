@@ -24,6 +24,12 @@ export interface ApiV1ChatsChatIdMessagesPostRequestAllOf {
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPostRequestAllOf
      */
+    clientSideId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiV1ChatsChatIdMessagesPostRequestAllOf
+     */
     compressAlgorithm?: string;
     /**
      * 
@@ -64,6 +70,7 @@ export function ApiV1ChatsChatIdMessagesPostRequestAllOfFromJSONTyped(json: any,
     }
     return {
         
+        'clientSideId': !exists(json, 'client_side_id') ? undefined : json['client_side_id'],
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
@@ -80,6 +87,7 @@ export function ApiV1ChatsChatIdMessagesPostRequestAllOfToJSON(value?: ApiV1Chat
     }
     return {
         
+        'client_side_id': value.clientSideId,
         'compress_algorithm': value.compressAlgorithm,
         'crypt_algorithm': value.cryptAlgorithm,
         'mime': value.mime,

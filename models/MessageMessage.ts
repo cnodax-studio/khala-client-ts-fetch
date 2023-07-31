@@ -43,6 +43,12 @@ export interface MessageMessage {
      * @type {string}
      * @memberof MessageMessage
      */
+    clientSideId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MessageMessage
+     */
     compressAlgorithm?: MessageMessageCompressAlgorithmEnum;
     /**
      * 
@@ -122,6 +128,7 @@ export function MessageMessageFromJSONTyped(json: any, ignoreDiscriminator: bool
     return {
         
         'chat': !exists(json, 'chat') ? undefined : ChatChatFromJSON(json['chat']),
+        'clientSideId': !exists(json, 'client_side_id') ? undefined : json['client_side_id'],
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'date': !exists(json, 'date') ? undefined : json['date'],
@@ -142,6 +149,7 @@ export function MessageMessageToJSON(value?: MessageMessage | null): any {
     return {
         
         'chat': ChatChatToJSON(value.chat),
+        'client_side_id': value.clientSideId,
         'compress_algorithm': value.compressAlgorithm,
         'crypt_algorithm': value.cryptAlgorithm,
         'date': value.date,
