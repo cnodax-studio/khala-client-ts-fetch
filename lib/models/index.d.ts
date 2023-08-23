@@ -14,6 +14,8 @@ export * from './ApiV1LoginPost200ResponseData';
 export * from './ApiV1LoginPost200ResponseDataAllOf';
 export * from './ApiV1LoginPostRequest';
 export * from './ApiV1LoginPostRequestAllOf';
+export * from './ApiV1PushWebServerPublicKeyGet200Response';
+export * from './ApiV1PushWebSubscribePostRequest';
 export * from './ApiV1RegisterPostRequest';
 export * from './ApiV1RegisterPostRequestAllOf';
 export * from './ApiV1SessionsCurrentGet200Response';

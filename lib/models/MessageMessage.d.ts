@@ -28,12 +28,6 @@ export interface MessageMessage {
      * @type {string}
      * @memberof MessageMessage
      */
-    clientSideId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof MessageMessage
-     */
     compressAlgorithm?: MessageMessageCompressAlgorithmEnum;
     /**
      *

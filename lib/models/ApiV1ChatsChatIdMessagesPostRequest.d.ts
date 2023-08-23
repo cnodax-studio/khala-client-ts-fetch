@@ -20,12 +20,6 @@ export interface ApiV1ChatsChatIdMessagesPostRequest {
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPostRequest
      */
-    clientSideId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
-     */
     compressAlgorithm?: string;
     /**
      *

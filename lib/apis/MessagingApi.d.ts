@@ -14,7 +14,7 @@ import type { ApiV1ChatsChatIdMessagesGet200Response, ApiV1ChatsChatIdMessagesPo
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;
     limit: number;
-    offset?: number;
+    offset: number;
 }
 export interface ApiV1ChatsChatIdMessagesMessageIdContentGetRequest {
     chatId: string;

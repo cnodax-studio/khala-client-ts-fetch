@@ -31,7 +31,7 @@ import {
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;
     limit: number;
-    offset?: number;
+    offset: number;
 }
 
 export interface ApiV1ChatsChatIdMessagesMessageIdContentGetRequest {
@@ -64,6 +64,10 @@ export class MessagingApi extends runtime.BaseAPI {
 
         if (requestParameters.limit === null || requestParameters.limit === undefined) {
             throw new runtime.RequiredError('limit','Required parameter requestParameters.limit was null or undefined when calling apiV1ChatsChatIdMessagesGet.');
+        }
+
+        if (requestParameters.offset === null || requestParameters.offset === undefined) {
+            throw new runtime.RequiredError('offset','Required parameter requestParameters.offset was null or undefined when calling apiV1ChatsChatIdMessagesGet.');
         }
 
         const queryParameters: any = {};
