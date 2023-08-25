@@ -49,6 +49,12 @@ export interface MessageMessage {
      * @type {string}
      * @memberof MessageMessage
      */
+    content?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MessageMessage
+     */
     cryptAlgorithm?: MessageMessageCryptAlgorithmEnum;
     /**
      * 
@@ -68,12 +74,6 @@ export interface MessageMessage {
      * @memberof MessageMessage
      */
     mime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof MessageMessage
-     */
-    text?: string;
     /**
      * 
      * @type {AuthUser}
@@ -123,11 +123,11 @@ export function MessageMessageFromJSONTyped(json: any, ignoreDiscriminator: bool
         
         'chat': !exists(json, 'chat') ? undefined : ChatChatFromJSON(json['chat']),
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
+        'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'date': !exists(json, 'date') ? undefined : json['date'],
         'id': !exists(json, 'id') ? undefined : json['id'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
-        'text': !exists(json, 'text') ? undefined : json['text'],
         'user': !exists(json, 'user') ? undefined : AuthUserFromJSON(json['user']),
     };
 }
@@ -143,11 +143,11 @@ export function MessageMessageToJSON(value?: MessageMessage | null): any {
         
         'chat': ChatChatToJSON(value.chat),
         'compress_algorithm': value.compressAlgorithm,
+        'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
         'date': value.date,
         'id': value.id,
         'mime': value.mime,
-        'text': value.text,
         'user': AuthUserToJSON(value.user),
     };
 }

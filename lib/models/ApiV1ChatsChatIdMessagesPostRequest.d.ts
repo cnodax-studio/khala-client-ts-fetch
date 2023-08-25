@@ -26,6 +26,12 @@ export interface ApiV1ChatsChatIdMessagesPostRequest {
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPostRequest
      */
+    content?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     */
     cryptAlgorithm?: string;
     /**
      *
@@ -33,12 +39,6 @@ export interface ApiV1ChatsChatIdMessagesPostRequest {
      * @memberof ApiV1ChatsChatIdMessagesPostRequest
      */
     mime?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
-     */
-    text?: string;
 }
 /**
  * Check if a given object implements the ApiV1ChatsChatIdMessagesPostRequest interface.

@@ -34,6 +34,12 @@ export interface MessageMessage {
      * @type {string}
      * @memberof MessageMessage
      */
+    content?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MessageMessage
+     */
     cryptAlgorithm?: MessageMessageCryptAlgorithmEnum;
     /**
      *
@@ -53,12 +59,6 @@ export interface MessageMessage {
      * @memberof MessageMessage
      */
     mime?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof MessageMessage
-     */
-    text?: string;
     /**
      *
      * @type {AuthUser}

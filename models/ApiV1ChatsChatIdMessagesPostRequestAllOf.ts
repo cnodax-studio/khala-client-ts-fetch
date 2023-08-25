@@ -30,6 +30,12 @@ export interface ApiV1ChatsChatIdMessagesPostRequestAllOf {
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPostRequestAllOf
      */
+    content?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiV1ChatsChatIdMessagesPostRequestAllOf
+     */
     cryptAlgorithm?: string;
     /**
      * 
@@ -37,12 +43,6 @@ export interface ApiV1ChatsChatIdMessagesPostRequestAllOf {
      * @memberof ApiV1ChatsChatIdMessagesPostRequestAllOf
      */
     mime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequestAllOf
-     */
-    text?: string;
 }
 
 /**
@@ -65,9 +65,9 @@ export function ApiV1ChatsChatIdMessagesPostRequestAllOfFromJSONTyped(json: any,
     return {
         
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
+        'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
-        'text': !exists(json, 'text') ? undefined : json['text'],
     };
 }
 
@@ -81,9 +81,9 @@ export function ApiV1ChatsChatIdMessagesPostRequestAllOfToJSON(value?: ApiV1Chat
     return {
         
         'compress_algorithm': value.compressAlgorithm,
+        'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
         'mime': value.mime,
-        'text': value.text,
     };
 }
 
