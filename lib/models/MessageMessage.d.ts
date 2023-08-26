@@ -28,6 +28,12 @@ export interface MessageMessage {
      * @type {string}
      * @memberof MessageMessage
      */
+    clientSideId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MessageMessage
+     */
     compressAlgorithm?: MessageMessageCompressAlgorithmEnum;
     /**
      *
@@ -53,6 +59,12 @@ export interface MessageMessage {
      * @memberof MessageMessage
      */
     id?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof MessageMessage
+     */
+    isSystem?: boolean;
     /**
      *
      * @type {string}

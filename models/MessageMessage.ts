@@ -43,6 +43,12 @@ export interface MessageMessage {
      * @type {string}
      * @memberof MessageMessage
      */
+    clientSideId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MessageMessage
+     */
     compressAlgorithm?: MessageMessageCompressAlgorithmEnum;
     /**
      * 
@@ -68,6 +74,12 @@ export interface MessageMessage {
      * @memberof MessageMessage
      */
     id?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MessageMessage
+     */
+    isSystem?: boolean;
     /**
      * 
      * @type {string}
@@ -122,11 +134,13 @@ export function MessageMessageFromJSONTyped(json: any, ignoreDiscriminator: bool
     return {
         
         'chat': !exists(json, 'chat') ? undefined : ChatChatFromJSON(json['chat']),
+        'clientSideId': !exists(json, 'client_side_id') ? undefined : json['client_side_id'],
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
         'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'date': !exists(json, 'date') ? undefined : json['date'],
         'id': !exists(json, 'id') ? undefined : json['id'],
+        'isSystem': !exists(json, 'is_system') ? undefined : json['is_system'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
         'user': !exists(json, 'user') ? undefined : AuthUserFromJSON(json['user']),
     };
@@ -142,11 +156,13 @@ export function MessageMessageToJSON(value?: MessageMessage | null): any {
     return {
         
         'chat': ChatChatToJSON(value.chat),
+        'client_side_id': value.clientSideId,
         'compress_algorithm': value.compressAlgorithm,
         'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
         'date': value.date,
         'id': value.id,
+        'is_system': value.isSystem,
         'mime': value.mime,
         'user': AuthUserToJSON(value.user),
     };
