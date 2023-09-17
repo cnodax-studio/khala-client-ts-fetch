@@ -13,12 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { ApiV1LoginPost200ResponseData } from './ApiV1LoginPost200ResponseData';
+import type { ApiV1LoginPost200ResponseAllOfData } from './ApiV1LoginPost200ResponseAllOfData';
 import {
-    ApiV1LoginPost200ResponseDataFromJSON,
-    ApiV1LoginPost200ResponseDataFromJSONTyped,
-    ApiV1LoginPost200ResponseDataToJSON,
-} from './ApiV1LoginPost200ResponseData';
+    ApiV1LoginPost200ResponseAllOfDataFromJSON,
+    ApiV1LoginPost200ResponseAllOfDataFromJSONTyped,
+    ApiV1LoginPost200ResponseAllOfDataToJSON,
+} from './ApiV1LoginPost200ResponseAllOfData';
 
 /**
  * 
@@ -28,16 +28,10 @@ import {
 export interface ApiV1LoginPost200Response {
     /**
      * 
-     * @type {ApiV1LoginPost200ResponseData}
+     * @type {ApiV1LoginPost200ResponseAllOfData}
      * @memberof ApiV1LoginPost200Response
      */
-    data?: ApiV1LoginPost200ResponseData;
-    /**
-     * 
-     * @type {object}
-     * @memberof ApiV1LoginPost200Response
-     */
-    fiberMap?: object;
+    data?: ApiV1LoginPost200ResponseAllOfData;
     /**
      * 
      * @type {string}
@@ -65,8 +59,7 @@ export function ApiV1LoginPost200ResponseFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'data': !exists(json, 'data') ? undefined : ApiV1LoginPost200ResponseDataFromJSON(json['data']),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
+        'data': !exists(json, 'data') ? undefined : ApiV1LoginPost200ResponseAllOfDataFromJSON(json['data']),
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -80,8 +73,7 @@ export function ApiV1LoginPost200ResponseToJSON(value?: ApiV1LoginPost200Respons
     }
     return {
         
-        'data': ApiV1LoginPost200ResponseDataToJSON(value.data),
-        'fiber.Map': value.fiberMap,
+        'data': ApiV1LoginPost200ResponseAllOfDataToJSON(value.data),
         'status': value.status,
     };
 }

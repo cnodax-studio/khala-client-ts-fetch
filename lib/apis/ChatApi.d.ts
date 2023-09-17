@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1ChatsChatIdInvitePostRequest, ApiV1ChatsGet200Response, ApiV1ChatsPost200Response, ApiV1ChatsPostRequest } from '../models';
+import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1ChatsChatIdInvitePostRequest, ApiV1ChatsGet200Response, ApiV1ChatsPost200Response, ApiV1ChatsPostRequest } from '../models/index';
 export interface ApiV1ChatsChatIdGetRequest {
     chatId: string;
 }

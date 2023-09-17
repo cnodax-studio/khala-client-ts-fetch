@@ -18,7 +18,7 @@ import type {
   ApiV1ChatsChatIdMessagesGet200Response,
   ApiV1ChatsChatIdMessagesPost200Response,
   ApiV1ChatsChatIdMessagesPostRequest,
-} from '../models';
+} from '../models/index';
 import {
     ApiV1ChatsChatIdMessagesGet200ResponseFromJSON,
     ApiV1ChatsChatIdMessagesGet200ResponseToJSON,
@@ -26,7 +26,7 @@ import {
     ApiV1ChatsChatIdMessagesPost200ResponseToJSON,
     ApiV1ChatsChatIdMessagesPostRequestFromJSON,
     ApiV1ChatsChatIdMessagesPostRequestToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;

@@ -21,7 +21,7 @@ import type {
   ApiV1ChatsPost200Response,
   ApiV1ChatsPostRequest,
   Get404Response,
-} from '../models';
+} from '../models/index';
 import {
     ApiV1ChatsChatIdInvitePost200ResponseFromJSON,
     ApiV1ChatsChatIdInvitePost200ResponseToJSON,
@@ -35,7 +35,7 @@ import {
     ApiV1ChatsPostRequestToJSON,
     Get404ResponseFromJSON,
     Get404ResponseToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface ApiV1ChatsChatIdGetRequest {
     chatId: string;

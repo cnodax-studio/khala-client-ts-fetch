@@ -18,7 +18,7 @@ import type {
   Get200Response,
   Get404Response,
   VersionGet200Response,
-} from '../models';
+} from '../models/index';
 import {
     Get200ResponseFromJSON,
     Get200ResponseToJSON,
@@ -26,7 +26,7 @@ import {
     Get404ResponseToJSON,
     VersionGet200ResponseFromJSON,
     VersionGet200ResponseToJSON,
-} from '../models';
+} from '../models/index';
 
 /**
  * 

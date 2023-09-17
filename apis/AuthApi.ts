@@ -19,7 +19,7 @@ import type {
   ApiV1LoginPostRequest,
   ApiV1RegisterPostRequest,
   Get404Response,
-} from '../models';
+} from '../models/index';
 import {
     ApiV1LoginPost200ResponseFromJSON,
     ApiV1LoginPost200ResponseToJSON,
@@ -29,7 +29,7 @@ import {
     ApiV1RegisterPostRequestToJSON,
     Get404ResponseFromJSON,
     Get404ResponseToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface ApiV1LoginPostOperationRequest {
     payload: ApiV1LoginPostRequest;

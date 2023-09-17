@@ -24,12 +24,6 @@ export interface ApiV1ChatsChatIdMessagesPost200Response {
     data?: MessageMessage;
     /**
      *
-     * @type {object}
-     * @memberof ApiV1ChatsChatIdMessagesPost200Response
-     */
-    fiberMap?: object;
-    /**
-     *
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPost200Response
      */

@@ -34,12 +34,6 @@ export interface ApiV1ChatsChatIdMessagesGet200Response {
     data?: Array<MessageMessage>;
     /**
      * 
-     * @type {object}
-     * @memberof ApiV1ChatsChatIdMessagesGet200Response
-     */
-    fiberMap?: object;
-    /**
-     * 
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesGet200Response
      */
@@ -66,7 +60,6 @@ export function ApiV1ChatsChatIdMessagesGet200ResponseFromJSONTyped(json: any, i
     return {
         
         'data': !exists(json, 'data') ? undefined : ((json['data'] as Array<any>).map(MessageMessageFromJSON)),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -81,7 +74,6 @@ export function ApiV1ChatsChatIdMessagesGet200ResponseToJSON(value?: ApiV1ChatsC
     return {
         
         'data': value.data === undefined ? undefined : ((value.data as Array<any>).map(MessageMessageToJSON)),
-        'fiber.Map': value.fiberMap,
         'status': value.status,
     };
 }

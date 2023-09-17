@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1PushWebServerPublicKeyGet200Response, ApiV1PushWebSubscribePostRequest } from '../models';
+import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1OtsCodeGet200Response, ApiV1PushWebSubscribePostRequest } from '../models/index';
 export interface ApiV1PushWebSubscribePostOperationRequest {
     payload: ApiV1PushWebSubscribePostRequest;
 }
@@ -21,11 +21,11 @@ export declare class PushApi extends runtime.BaseAPI {
     /**
      * Retrieve VAPID public key for PUSH notification
      */
-    apiV1PushWebServerPublicKeyGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1PushWebServerPublicKeyGet200Response>>;
+    apiV1PushWebServerPublicKeyGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1OtsCodeGet200Response>>;
     /**
      * Retrieve VAPID public key for PUSH notification
      */
-    apiV1PushWebServerPublicKeyGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1PushWebServerPublicKeyGet200Response>;
+    apiV1PushWebServerPublicKeyGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1OtsCodeGet200Response>;
     /**
      * Subscribe to web PUSH notifications
      */

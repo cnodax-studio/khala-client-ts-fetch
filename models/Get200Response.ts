@@ -13,12 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { Get200ResponseData } from './Get200ResponseData';
+import type { Get200ResponseAllOfData } from './Get200ResponseAllOfData';
 import {
-    Get200ResponseDataFromJSON,
-    Get200ResponseDataFromJSONTyped,
-    Get200ResponseDataToJSON,
-} from './Get200ResponseData';
+    Get200ResponseAllOfDataFromJSON,
+    Get200ResponseAllOfDataFromJSONTyped,
+    Get200ResponseAllOfDataToJSON,
+} from './Get200ResponseAllOfData';
 
 /**
  * 
@@ -28,16 +28,10 @@ import {
 export interface Get200Response {
     /**
      * 
-     * @type {Get200ResponseData}
+     * @type {Get200ResponseAllOfData}
      * @memberof Get200Response
      */
-    data?: Get200ResponseData;
-    /**
-     * 
-     * @type {object}
-     * @memberof Get200Response
-     */
-    fiberMap?: object;
+    data?: Get200ResponseAllOfData;
     /**
      * 
      * @type {string}
@@ -65,8 +59,7 @@ export function Get200ResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
     }
     return {
         
-        'data': !exists(json, 'data') ? undefined : Get200ResponseDataFromJSON(json['data']),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
+        'data': !exists(json, 'data') ? undefined : Get200ResponseAllOfDataFromJSON(json['data']),
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -80,8 +73,7 @@ export function Get200ResponseToJSON(value?: Get200Response | null): any {
     }
     return {
         
-        'data': Get200ResponseDataToJSON(value.data),
-        'fiber.Map': value.fiberMap,
+        'data': Get200ResponseAllOfDataToJSON(value.data),
         'status': value.status,
     };
 }

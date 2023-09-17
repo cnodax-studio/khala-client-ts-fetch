@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface ApiV1ChatsChatIdInvitePost200Response {
     /**
      * 
-     * @type {object}
-     * @memberof ApiV1ChatsChatIdInvitePost200Response
-     */
-    fiberMap?: object;
-    /**
-     * 
      * @type {string}
      * @memberof ApiV1ChatsChatIdInvitePost200Response
      */
@@ -52,7 +46,6 @@ export function ApiV1ChatsChatIdInvitePost200ResponseFromJSONTyped(json: any, ig
     }
     return {
         
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -66,7 +59,6 @@ export function ApiV1ChatsChatIdInvitePost200ResponseToJSON(value?: ApiV1ChatsCh
     }
     return {
         
-        'fiber.Map': value.fiberMap,
         'status': value.status,
     };
 }

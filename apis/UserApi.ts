@@ -19,7 +19,7 @@ import type {
   ApiV1SessionsCurrentGet200Response,
   ApiV1SessionsGet200Response,
   Get404Response,
-} from '../models';
+} from '../models/index';
 import {
     ApiV1ChatsChatIdInvitePost200ResponseFromJSON,
     ApiV1ChatsChatIdInvitePost200ResponseToJSON,
@@ -29,7 +29,7 @@ import {
     ApiV1SessionsGet200ResponseToJSON,
     Get404ResponseFromJSON,
     Get404ResponseToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface ApiV1SessionsSessionIdRevokePostRequest {
     sessionId: string;

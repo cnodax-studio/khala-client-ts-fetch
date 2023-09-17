@@ -16,20 +16,20 @@
 import * as runtime from '../runtime';
 import type {
   ApiV1ChatsChatIdInvitePost200Response,
-  ApiV1PushWebServerPublicKeyGet200Response,
+  ApiV1OtsCodeGet200Response,
   ApiV1PushWebSubscribePostRequest,
   Get404Response,
-} from '../models';
+} from '../models/index';
 import {
     ApiV1ChatsChatIdInvitePost200ResponseFromJSON,
     ApiV1ChatsChatIdInvitePost200ResponseToJSON,
-    ApiV1PushWebServerPublicKeyGet200ResponseFromJSON,
-    ApiV1PushWebServerPublicKeyGet200ResponseToJSON,
+    ApiV1OtsCodeGet200ResponseFromJSON,
+    ApiV1OtsCodeGet200ResponseToJSON,
     ApiV1PushWebSubscribePostRequestFromJSON,
     ApiV1PushWebSubscribePostRequestToJSON,
     Get404ResponseFromJSON,
     Get404ResponseToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface ApiV1PushWebSubscribePostOperationRequest {
     payload: ApiV1PushWebSubscribePostRequest;
@@ -43,7 +43,7 @@ export class PushApi extends runtime.BaseAPI {
     /**
      * Retrieve VAPID public key for PUSH notification
      */
-    async apiV1PushWebServerPublicKeyGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1PushWebServerPublicKeyGet200Response>> {
+    async apiV1PushWebServerPublicKeyGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1OtsCodeGet200Response>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -59,13 +59,13 @@ export class PushApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1PushWebServerPublicKeyGet200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1OtsCodeGet200ResponseFromJSON(jsonValue));
     }
 
     /**
      * Retrieve VAPID public key for PUSH notification
      */
-    async apiV1PushWebServerPublicKeyGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1PushWebServerPublicKeyGet200Response> {
+    async apiV1PushWebServerPublicKeyGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1OtsCodeGet200Response> {
         const response = await this.apiV1PushWebServerPublicKeyGetRaw(initOverrides);
         return await response.value();
     }

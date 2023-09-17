@@ -13,12 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { VersionGet200ResponseData } from './VersionGet200ResponseData';
+import type { VersionGet200ResponseAllOfData } from './VersionGet200ResponseAllOfData';
 import {
-    VersionGet200ResponseDataFromJSON,
-    VersionGet200ResponseDataFromJSONTyped,
-    VersionGet200ResponseDataToJSON,
-} from './VersionGet200ResponseData';
+    VersionGet200ResponseAllOfDataFromJSON,
+    VersionGet200ResponseAllOfDataFromJSONTyped,
+    VersionGet200ResponseAllOfDataToJSON,
+} from './VersionGet200ResponseAllOfData';
 
 /**
  * 
@@ -28,16 +28,10 @@ import {
 export interface VersionGet200Response {
     /**
      * 
-     * @type {VersionGet200ResponseData}
+     * @type {VersionGet200ResponseAllOfData}
      * @memberof VersionGet200Response
      */
-    data?: VersionGet200ResponseData;
-    /**
-     * 
-     * @type {object}
-     * @memberof VersionGet200Response
-     */
-    fiberMap?: object;
+    data?: VersionGet200ResponseAllOfData;
     /**
      * 
      * @type {string}
@@ -65,8 +59,7 @@ export function VersionGet200ResponseFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'data': !exists(json, 'data') ? undefined : VersionGet200ResponseDataFromJSON(json['data']),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
+        'data': !exists(json, 'data') ? undefined : VersionGet200ResponseAllOfDataFromJSON(json['data']),
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -80,8 +73,7 @@ export function VersionGet200ResponseToJSON(value?: VersionGet200Response | null
     }
     return {
         
-        'data': VersionGet200ResponseDataToJSON(value.data),
-        'fiber.Map': value.fiberMap,
+        'data': VersionGet200ResponseAllOfDataToJSON(value.data),
         'status': value.status,
     };
 }

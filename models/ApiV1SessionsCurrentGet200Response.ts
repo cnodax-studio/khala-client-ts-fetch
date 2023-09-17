@@ -34,12 +34,6 @@ export interface ApiV1SessionsCurrentGet200Response {
     data?: AuthSession;
     /**
      * 
-     * @type {object}
-     * @memberof ApiV1SessionsCurrentGet200Response
-     */
-    fiberMap?: object;
-    /**
-     * 
      * @type {string}
      * @memberof ApiV1SessionsCurrentGet200Response
      */
@@ -66,7 +60,6 @@ export function ApiV1SessionsCurrentGet200ResponseFromJSONTyped(json: any, ignor
     return {
         
         'data': !exists(json, 'data') ? undefined : AuthSessionFromJSON(json['data']),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -81,7 +74,6 @@ export function ApiV1SessionsCurrentGet200ResponseToJSON(value?: ApiV1SessionsCu
     return {
         
         'data': AuthSessionToJSON(value.data),
-        'fiber.Map': value.fiberMap,
         'status': value.status,
     };
 }

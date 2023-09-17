@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { VersionGet200ResponseData } from './VersionGet200ResponseData';
+import type { VersionGet200ResponseAllOfData } from './VersionGet200ResponseAllOfData';
 /**
  *
  * @export
@@ -18,16 +18,10 @@ import type { VersionGet200ResponseData } from './VersionGet200ResponseData';
 export interface VersionGet200Response {
     /**
      *
-     * @type {VersionGet200ResponseData}
+     * @type {VersionGet200ResponseAllOfData}
      * @memberof VersionGet200Response
      */
-    data?: VersionGet200ResponseData;
-    /**
-     *
-     * @type {object}
-     * @memberof VersionGet200Response
-     */
-    fiberMap?: object;
+    data?: VersionGet200ResponseAllOfData;
     /**
      *
      * @type {string}

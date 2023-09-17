@@ -13,12 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { ApiV1SubscribeGet200ResponseEventsInner } from './ApiV1SubscribeGet200ResponseEventsInner';
+import type { ApiV1SubscribeGet200ResponseAllOfEventsInner } from './ApiV1SubscribeGet200ResponseAllOfEventsInner';
 import {
-    ApiV1SubscribeGet200ResponseEventsInnerFromJSON,
-    ApiV1SubscribeGet200ResponseEventsInnerFromJSONTyped,
-    ApiV1SubscribeGet200ResponseEventsInnerToJSON,
-} from './ApiV1SubscribeGet200ResponseEventsInner';
+    ApiV1SubscribeGet200ResponseAllOfEventsInnerFromJSON,
+    ApiV1SubscribeGet200ResponseAllOfEventsInnerFromJSONTyped,
+    ApiV1SubscribeGet200ResponseAllOfEventsInnerToJSON,
+} from './ApiV1SubscribeGet200ResponseAllOfEventsInner';
 
 /**
  * 
@@ -28,16 +28,10 @@ import {
 export interface ApiV1SubscribeGet200Response {
     /**
      * 
-     * @type {Array<ApiV1SubscribeGet200ResponseEventsInner>}
+     * @type {Array<ApiV1SubscribeGet200ResponseAllOfEventsInner>}
      * @memberof ApiV1SubscribeGet200Response
      */
-    events?: Array<ApiV1SubscribeGet200ResponseEventsInner>;
-    /**
-     * 
-     * @type {object}
-     * @memberof ApiV1SubscribeGet200Response
-     */
-    fiberMap?: object;
+    events?: Array<ApiV1SubscribeGet200ResponseAllOfEventsInner>;
 }
 
 /**
@@ -59,8 +53,7 @@ export function ApiV1SubscribeGet200ResponseFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'events': !exists(json, 'events') ? undefined : ((json['events'] as Array<any>).map(ApiV1SubscribeGet200ResponseEventsInnerFromJSON)),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
+        'events': !exists(json, 'events') ? undefined : ((json['events'] as Array<any>).map(ApiV1SubscribeGet200ResponseAllOfEventsInnerFromJSON)),
     };
 }
 
@@ -73,8 +66,7 @@ export function ApiV1SubscribeGet200ResponseToJSON(value?: ApiV1SubscribeGet200R
     }
     return {
         
-        'events': value.events === undefined ? undefined : ((value.events as Array<any>).map(ApiV1SubscribeGet200ResponseEventsInnerToJSON)),
-        'fiber.Map': value.fiberMap,
+        'events': value.events === undefined ? undefined : ((value.events as Array<any>).map(ApiV1SubscribeGet200ResponseAllOfEventsInnerToJSON)),
     };
 }
 

@@ -24,12 +24,6 @@ export interface ApiV1SessionsGet200Response {
     data?: Array<AuthSession>;
     /**
      *
-     * @type {object}
-     * @memberof ApiV1SessionsGet200Response
-     */
-    fiberMap?: object;
-    /**
-     *
      * @type {string}
      * @memberof ApiV1SessionsGet200Response
      */

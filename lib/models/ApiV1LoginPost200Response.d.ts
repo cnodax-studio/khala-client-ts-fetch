@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ApiV1LoginPost200ResponseData } from './ApiV1LoginPost200ResponseData';
+import type { ApiV1LoginPost200ResponseAllOfData } from './ApiV1LoginPost200ResponseAllOfData';
 /**
  *
  * @export
@@ -18,16 +18,10 @@ import type { ApiV1LoginPost200ResponseData } from './ApiV1LoginPost200ResponseD
 export interface ApiV1LoginPost200Response {
     /**
      *
-     * @type {ApiV1LoginPost200ResponseData}
+     * @type {ApiV1LoginPost200ResponseAllOfData}
      * @memberof ApiV1LoginPost200Response
      */
-    data?: ApiV1LoginPost200ResponseData;
-    /**
-     *
-     * @type {object}
-     * @memberof ApiV1LoginPost200Response
-     */
-    fiberMap?: object;
+    data?: ApiV1LoginPost200ResponseAllOfData;
     /**
      *
      * @type {string}

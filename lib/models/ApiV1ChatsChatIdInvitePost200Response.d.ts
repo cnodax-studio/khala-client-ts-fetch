@@ -17,12 +17,6 @@
 export interface ApiV1ChatsChatIdInvitePost200Response {
     /**
      *
-     * @type {object}
-     * @memberof ApiV1ChatsChatIdInvitePost200Response
-     */
-    fiberMap?: object;
-    /**
-     *
      * @type {string}
      * @memberof ApiV1ChatsChatIdInvitePost200Response
      */

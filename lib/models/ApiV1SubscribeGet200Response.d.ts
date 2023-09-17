@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ApiV1SubscribeGet200ResponseEventsInner } from './ApiV1SubscribeGet200ResponseEventsInner';
+import type { ApiV1SubscribeGet200ResponseAllOfEventsInner } from './ApiV1SubscribeGet200ResponseAllOfEventsInner';
 /**
  *
  * @export
@@ -18,16 +18,10 @@ import type { ApiV1SubscribeGet200ResponseEventsInner } from './ApiV1SubscribeGe
 export interface ApiV1SubscribeGet200Response {
     /**
      *
-     * @type {Array<ApiV1SubscribeGet200ResponseEventsInner>}
+     * @type {Array<ApiV1SubscribeGet200ResponseAllOfEventsInner>}
      * @memberof ApiV1SubscribeGet200Response
      */
-    events?: Array<ApiV1SubscribeGet200ResponseEventsInner>;
-    /**
-     *
-     * @type {object}
-     * @memberof ApiV1SubscribeGet200Response
-     */
-    fiberMap?: object;
+    events?: Array<ApiV1SubscribeGet200ResponseAllOfEventsInner>;
 }
 /**
  * Check if a given object implements the ApiV1SubscribeGet200Response interface.

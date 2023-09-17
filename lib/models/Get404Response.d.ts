@@ -17,12 +17,6 @@
 export interface Get404Response {
     /**
      *
-     * @type {object}
-     * @memberof Get404Response
-     */
-    fiberMap?: object;
-    /**
-     *
      * @type {string}
      * @memberof Get404Response
      */

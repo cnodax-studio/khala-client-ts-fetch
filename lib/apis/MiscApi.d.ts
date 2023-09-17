@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { Get200Response, VersionGet200Response } from '../models';
+import type { Get200Response, VersionGet200Response } from '../models/index';
 /**
  *
  */

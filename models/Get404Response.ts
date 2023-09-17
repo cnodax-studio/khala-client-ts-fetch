@@ -21,12 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface Get404Response {
     /**
      * 
-     * @type {object}
-     * @memberof Get404Response
-     */
-    fiberMap?: object;
-    /**
-     * 
      * @type {string}
      * @memberof Get404Response
      */
@@ -58,7 +52,6 @@ export function Get404ResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
     }
     return {
         
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
         'status': !exists(json, 'status') ? undefined : json['status'],
         'type': !exists(json, 'type') ? undefined : json['type'],
     };
@@ -73,7 +66,6 @@ export function Get404ResponseToJSON(value?: Get404Response | null): any {
     }
     return {
         
-        'fiber.Map': value.fiberMap,
         'status': value.status,
         'type': value.type,
     };

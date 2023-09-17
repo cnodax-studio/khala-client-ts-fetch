@@ -24,12 +24,6 @@ export interface ApiV1SessionsCurrentGet200Response {
     data?: AuthSession;
     /**
      *
-     * @type {object}
-     * @memberof ApiV1SessionsCurrentGet200Response
-     */
-    fiberMap?: object;
-    /**
-     *
      * @type {string}
      * @memberof ApiV1SessionsCurrentGet200Response
      */

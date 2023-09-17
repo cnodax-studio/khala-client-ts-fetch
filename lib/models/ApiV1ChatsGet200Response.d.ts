@@ -24,12 +24,6 @@ export interface ApiV1ChatsGet200Response {
     data?: Array<ChatChat>;
     /**
      *
-     * @type {object}
-     * @memberof ApiV1ChatsGet200Response
-     */
-    fiberMap?: object;
-    /**
-     *
      * @type {string}
      * @memberof ApiV1ChatsGet200Response
      */

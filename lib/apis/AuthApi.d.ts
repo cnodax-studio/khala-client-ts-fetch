@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ApiV1LoginPost200Response, ApiV1LoginPostRequest, ApiV1RegisterPostRequest } from '../models';
+import type { ApiV1LoginPost200Response, ApiV1LoginPostRequest, ApiV1RegisterPostRequest } from '../models/index';
 export interface ApiV1LoginPostOperationRequest {
     payload: ApiV1LoginPostRequest;
 }

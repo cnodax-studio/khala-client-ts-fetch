@@ -16,11 +16,11 @@
 import * as runtime from '../runtime';
 import type {
   ApiV1SubscribeGet200Response,
-} from '../models';
+} from '../models/index';
 import {
     ApiV1SubscribeGet200ResponseFromJSON,
     ApiV1SubscribeGet200ResponseToJSON,
-} from '../models';
+} from '../models/index';
 
 /**
  * 

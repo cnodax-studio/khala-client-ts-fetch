@@ -34,12 +34,6 @@ export interface ApiV1ChatsGet200Response {
     data?: Array<ChatChat>;
     /**
      * 
-     * @type {object}
-     * @memberof ApiV1ChatsGet200Response
-     */
-    fiberMap?: object;
-    /**
-     * 
      * @type {string}
      * @memberof ApiV1ChatsGet200Response
      */
@@ -66,7 +60,6 @@ export function ApiV1ChatsGet200ResponseFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'data': !exists(json, 'data') ? undefined : ((json['data'] as Array<any>).map(ChatChatFromJSON)),
-        'fiberMap': !exists(json, 'fiber.Map') ? undefined : json['fiber.Map'],
         'status': !exists(json, 'status') ? undefined : json['status'],
     };
 }
@@ -81,7 +74,6 @@ export function ApiV1ChatsGet200ResponseToJSON(value?: ApiV1ChatsGet200Response 
     return {
         
         'data': value.data === undefined ? undefined : ((value.data as Array<any>).map(ChatChatToJSON)),
-        'fiber.Map': value.fiberMap,
         'status': value.status,
     };
 }

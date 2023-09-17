@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ApiV1SubscribeGet200Response } from '../models';
+import type { ApiV1SubscribeGet200Response } from '../models/index';
 /**
  *
  */
