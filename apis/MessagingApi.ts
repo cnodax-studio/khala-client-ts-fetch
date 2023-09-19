@@ -39,6 +39,11 @@ export interface ApiV1ChatsChatIdMessagesMessageIdContentGetRequest {
     messageId: string;
 }
 
+export interface ApiV1ChatsChatIdMessagesMessageIdDeleteRequest {
+    chatId: string;
+    messageId: string;
+}
+
 export interface ApiV1ChatsChatIdMessagesMessageIdGetRequest {
     chatId: string;
     messageId: string;
@@ -121,7 +126,7 @@ export class MessagingApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         if (this.configuration && this.configuration.apiKey) {
-            queryParameters["token"] = this.configuration.apiKey("token"); // QueryApiKeyAuth authentication
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
         }
 
         const response = await this.request({
@@ -139,6 +144,44 @@ export class MessagingApi extends runtime.BaseAPI {
      */
     async apiV1ChatsChatIdMessagesMessageIdContentGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdContentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.apiV1ChatsChatIdMessagesMessageIdContentGetRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Delete specific message
+     */
+    async apiV1ChatsChatIdMessagesMessageIdDeleteRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdMessagesPost200Response>> {
+        if (requestParameters.chatId === null || requestParameters.chatId === undefined) {
+            throw new runtime.RequiredError('chatId','Required parameter requestParameters.chatId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdDelete.');
+        }
+
+        if (requestParameters.messageId === null || requestParameters.messageId === undefined) {
+            throw new runtime.RequiredError('messageId','Required parameter requestParameters.messageId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdDelete.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/chats/{chat_id}/messages/{message_id}`.replace(`{${"chat_id"}}`, encodeURIComponent(String(requestParameters.chatId))).replace(`{${"message_id"}}`, encodeURIComponent(String(requestParameters.messageId))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1ChatsChatIdMessagesPost200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Delete specific message
+     */
+    async apiV1ChatsChatIdMessagesMessageIdDelete(requestParameters: ApiV1ChatsChatIdMessagesMessageIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response> {
+        const response = await this.apiV1ChatsChatIdMessagesMessageIdDeleteRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**

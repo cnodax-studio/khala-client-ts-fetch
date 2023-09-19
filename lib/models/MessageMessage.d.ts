@@ -64,6 +64,18 @@ export interface MessageMessage {
      * @type {boolean}
      * @memberof MessageMessage
      */
+    isDeleted?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof MessageMessage
+     */
+    isEdited?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof MessageMessage
+     */
     isSystem?: boolean;
     /**
      *

@@ -20,6 +20,10 @@ export interface ApiV1ChatsChatIdMessagesMessageIdContentGetRequest {
     chatId: string;
     messageId: string;
 }
+export interface ApiV1ChatsChatIdMessagesMessageIdDeleteRequest {
+    chatId: string;
+    messageId: string;
+}
 export interface ApiV1ChatsChatIdMessagesMessageIdGetRequest {
     chatId: string;
     messageId: string;
@@ -48,6 +52,14 @@ export declare class MessagingApi extends runtime.BaseAPI {
      * Get message content in specific chat
      */
     apiV1ChatsChatIdMessagesMessageIdContentGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdContentGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     * Delete specific message
+     */
+    apiV1ChatsChatIdMessagesMessageIdDeleteRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdMessagesPost200Response>>;
+    /**
+     * Delete specific message
+     */
+    apiV1ChatsChatIdMessagesMessageIdDelete(requestParameters: ApiV1ChatsChatIdMessagesMessageIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response>;
     /**
      * Get message in specific chat
      */

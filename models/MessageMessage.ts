@@ -79,6 +79,18 @@ export interface MessageMessage {
      * @type {boolean}
      * @memberof MessageMessage
      */
+    isDeleted?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MessageMessage
+     */
+    isEdited?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MessageMessage
+     */
     isSystem?: boolean;
     /**
      * 
@@ -140,6 +152,8 @@ export function MessageMessageFromJSONTyped(json: any, ignoreDiscriminator: bool
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'date': !exists(json, 'date') ? undefined : json['date'],
         'id': !exists(json, 'id') ? undefined : json['id'],
+        'isDeleted': !exists(json, 'is_deleted') ? undefined : json['is_deleted'],
+        'isEdited': !exists(json, 'is_edited') ? undefined : json['is_edited'],
         'isSystem': !exists(json, 'is_system') ? undefined : json['is_system'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
         'user': !exists(json, 'user') ? undefined : AuthUserFromJSON(json['user']),
@@ -162,6 +176,8 @@ export function MessageMessageToJSON(value?: MessageMessage | null): any {
         'crypt_algorithm': value.cryptAlgorithm,
         'date': value.date,
         'id': value.id,
+        'is_deleted': value.isDeleted,
+        'is_edited': value.isEdited,
         'is_system': value.isSystem,
         'mime': value.mime,
         'user': AuthUserToJSON(value.user),
