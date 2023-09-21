@@ -31,6 +31,10 @@ import {
     Get404ResponseToJSON,
 } from '../models/index';
 
+export interface ApiV1PushWebIdDeleteRequest {
+    id: string;
+}
+
 export interface ApiV1PushWebSubscribePostOperationRequest {
     payload: ApiV1PushWebSubscribePostRequest;
 }
@@ -39,6 +43,40 @@ export interface ApiV1PushWebSubscribePostOperationRequest {
  * 
  */
 export class PushApi extends runtime.BaseAPI {
+
+    /**
+     * Delete Web Push Subscription
+     */
+    async apiV1PushWebIdDeleteRaw(requestParameters: ApiV1PushWebIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdInvitePost200Response>> {
+        if (requestParameters.id === null || requestParameters.id === undefined) {
+            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling apiV1PushWebIdDelete.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/push/web/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1ChatsChatIdInvitePost200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Delete Web Push Subscription
+     */
+    async apiV1PushWebIdDelete(requestParameters: ApiV1PushWebIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdInvitePost200Response> {
+        const response = await this.apiV1PushWebIdDeleteRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      * Retrieve VAPID public key for PUSH notification
@@ -104,6 +142,36 @@ export class PushApi extends runtime.BaseAPI {
      */
     async apiV1PushWebSubscribePost(requestParameters: ApiV1PushWebSubscribePostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdInvitePost200Response> {
         const response = await this.apiV1PushWebSubscribePostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Test Web Push Subscriptions
+     */
+    async apiV1PushWebTestPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdInvitePost200Response>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/push/web/test`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1ChatsChatIdInvitePost200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Test Web Push Subscriptions
+     */
+    async apiV1PushWebTestPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdInvitePost200Response> {
+        const response = await this.apiV1PushWebTestPostRaw(initOverrides);
         return await response.value();
     }
 

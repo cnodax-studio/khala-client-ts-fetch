@@ -11,6 +11,9 @@
  */
 import * as runtime from '../runtime';
 import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1OtsCodeGet200Response, ApiV1PushWebSubscribePostRequest } from '../models/index';
+export interface ApiV1PushWebIdDeleteRequest {
+    id: string;
+}
 export interface ApiV1PushWebSubscribePostOperationRequest {
     payload: ApiV1PushWebSubscribePostRequest;
 }
@@ -18,6 +21,14 @@ export interface ApiV1PushWebSubscribePostOperationRequest {
  *
  */
 export declare class PushApi extends runtime.BaseAPI {
+    /**
+     * Delete Web Push Subscription
+     */
+    apiV1PushWebIdDeleteRaw(requestParameters: ApiV1PushWebIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdInvitePost200Response>>;
+    /**
+     * Delete Web Push Subscription
+     */
+    apiV1PushWebIdDelete(requestParameters: ApiV1PushWebIdDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdInvitePost200Response>;
     /**
      * Retrieve VAPID public key for PUSH notification
      */
@@ -34,4 +45,12 @@ export declare class PushApi extends runtime.BaseAPI {
      * Subscribe to web PUSH notifications
      */
     apiV1PushWebSubscribePost(requestParameters: ApiV1PushWebSubscribePostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdInvitePost200Response>;
+    /**
+     * Test Web Push Subscriptions
+     */
+    apiV1PushWebTestPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdInvitePost200Response>>;
+    /**
+     * Test Web Push Subscriptions
+     */
+    apiV1PushWebTestPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdInvitePost200Response>;
 }
