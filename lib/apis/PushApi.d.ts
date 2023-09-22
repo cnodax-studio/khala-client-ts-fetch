@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1OtsCodeGet200Response, ApiV1PushWebSubscribePostRequest } from '../models/index';
+import type { ApiV1ChatsChatIdInvitePost200Response, ApiV1OtsCodeGet200Response, ApiV1PushWebGet200Response, ApiV1PushWebSubscribePostRequest } from '../models/index';
 export interface ApiV1PushWebIdDeleteRequest {
     id: string;
 }
@@ -21,6 +21,14 @@ export interface ApiV1PushWebSubscribePostOperationRequest {
  *
  */
 export declare class PushApi extends runtime.BaseAPI {
+    /**
+     * Get Web Push Subscriptions
+     */
+    apiV1PushWebGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1PushWebGet200Response>>;
+    /**
+     * Get Web Push Subscriptions
+     */
+    apiV1PushWebGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1PushWebGet200Response>;
     /**
      * Delete Web Push Subscription
      */

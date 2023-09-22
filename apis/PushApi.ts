@@ -17,6 +17,7 @@ import * as runtime from '../runtime';
 import type {
   ApiV1ChatsChatIdInvitePost200Response,
   ApiV1OtsCodeGet200Response,
+  ApiV1PushWebGet200Response,
   ApiV1PushWebSubscribePostRequest,
   Get404Response,
 } from '../models/index';
@@ -25,6 +26,8 @@ import {
     ApiV1ChatsChatIdInvitePost200ResponseToJSON,
     ApiV1OtsCodeGet200ResponseFromJSON,
     ApiV1OtsCodeGet200ResponseToJSON,
+    ApiV1PushWebGet200ResponseFromJSON,
+    ApiV1PushWebGet200ResponseToJSON,
     ApiV1PushWebSubscribePostRequestFromJSON,
     ApiV1PushWebSubscribePostRequestToJSON,
     Get404ResponseFromJSON,
@@ -43,6 +46,36 @@ export interface ApiV1PushWebSubscribePostOperationRequest {
  * 
  */
 export class PushApi extends runtime.BaseAPI {
+
+    /**
+     * Get Web Push Subscriptions
+     */
+    async apiV1PushWebGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1PushWebGet200Response>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/push/web`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1PushWebGet200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Get Web Push Subscriptions
+     */
+    async apiV1PushWebGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1PushWebGet200Response> {
+        const response = await this.apiV1PushWebGetRaw(initOverrides);
+        return await response.value();
+    }
 
     /**
      * Delete Web Push Subscription

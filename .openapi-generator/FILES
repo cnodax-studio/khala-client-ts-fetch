@@ -23,6 +23,7 @@ models/ApiV1OtsCodeGet200Response.ts
 models/ApiV1OtsPost200Response.ts
 models/ApiV1OtsPost200ResponseAllOfData.ts
 models/ApiV1OtsPostRequest.ts
+models/ApiV1PushWebGet200Response.ts
 models/ApiV1PushWebSubscribePostRequest.ts
 models/ApiV1RegisterPostRequest.ts
 models/ApiV1SessionsCurrentGet200Response.ts
@@ -30,6 +31,8 @@ models/ApiV1SessionsGet200Response.ts
 models/ApiV1SubscribeGet200Response.ts
 models/ApiV1SubscribeGet200ResponseAllOfEventsInner.ts
 models/ApiV1SubscribeGet200ResponseAllOfEventsInnerAllOfData.ts
+models/AuthPushSubscription.ts
+models/AuthPushSubscriptionType.ts
 models/AuthSession.ts
 models/AuthUser.ts
 models/ChatChat.ts
