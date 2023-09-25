@@ -100,6 +100,12 @@ export interface MessageMessage {
     mime?: string;
     /**
      * 
+     * @type {MessageMessage}
+     * @memberof MessageMessage
+     */
+    replyTo?: MessageMessage;
+    /**
+     * 
      * @type {AuthUser}
      * @memberof MessageMessage
      */
@@ -156,6 +162,7 @@ export function MessageMessageFromJSONTyped(json: any, ignoreDiscriminator: bool
         'isEdited': !exists(json, 'is_edited') ? undefined : json['is_edited'],
         'isSystem': !exists(json, 'is_system') ? undefined : json['is_system'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
+        'replyTo': !exists(json, 'reply_to') ? undefined : MessageMessageFromJSON(json['reply_to']),
         'user': !exists(json, 'user') ? undefined : AuthUserFromJSON(json['user']),
     };
 }
@@ -180,6 +187,7 @@ export function MessageMessageToJSON(value?: MessageMessage | null): any {
         'is_edited': value.isEdited,
         'is_system': value.isSystem,
         'mime': value.mime,
+        'reply_to': MessageMessageToJSON(value.replyTo),
         'user': AuthUserToJSON(value.user),
     };
 }

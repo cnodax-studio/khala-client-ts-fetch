@@ -1,6 +1,7 @@
 export * from './ApiV1ChatsChatIdInvitePost200Response';
 export * from './ApiV1ChatsChatIdInvitePostRequest';
 export * from './ApiV1ChatsChatIdMessagesGet200Response';
+export * from './ApiV1ChatsChatIdMessagesMessageIdPatchRequest';
 export * from './ApiV1ChatsChatIdMessagesPost200Response';
 export * from './ApiV1ChatsChatIdMessagesPostRequest';
 export * from './ApiV1ChatsGet200Response';

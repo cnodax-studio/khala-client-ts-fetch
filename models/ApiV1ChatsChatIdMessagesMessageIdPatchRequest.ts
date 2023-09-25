@@ -16,61 +16,55 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface ApiV1ChatsChatIdMessagesPostRequest
+ * @interface ApiV1ChatsChatIdMessagesMessageIdPatchRequest
  */
-export interface ApiV1ChatsChatIdMessagesPostRequest {
+export interface ApiV1ChatsChatIdMessagesMessageIdPatchRequest {
     /**
      * 
      * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     clientSideId?: string;
     /**
      * 
      * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     compressAlgorithm?: string;
     /**
      * 
      * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     content?: string;
     /**
      * 
      * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     cryptAlgorithm?: string;
     /**
      * 
      * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     mime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesPostRequest
-     */
-    replyToId?: string;
 }
 
 /**
- * Check if a given object implements the ApiV1ChatsChatIdMessagesPostRequest interface.
+ * Check if a given object implements the ApiV1ChatsChatIdMessagesMessageIdPatchRequest interface.
  */
-export function instanceOfApiV1ChatsChatIdMessagesPostRequest(value: object): boolean {
+export function instanceOfApiV1ChatsChatIdMessagesMessageIdPatchRequest(value: object): boolean {
     let isInstance = true;
 
     return isInstance;
 }
 
-export function ApiV1ChatsChatIdMessagesPostRequestFromJSON(json: any): ApiV1ChatsChatIdMessagesPostRequest {
-    return ApiV1ChatsChatIdMessagesPostRequestFromJSONTyped(json, false);
+export function ApiV1ChatsChatIdMessagesMessageIdPatchRequestFromJSON(json: any): ApiV1ChatsChatIdMessagesMessageIdPatchRequest {
+    return ApiV1ChatsChatIdMessagesMessageIdPatchRequestFromJSONTyped(json, false);
 }
 
-export function ApiV1ChatsChatIdMessagesPostRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiV1ChatsChatIdMessagesPostRequest {
+export function ApiV1ChatsChatIdMessagesMessageIdPatchRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiV1ChatsChatIdMessagesMessageIdPatchRequest {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -81,11 +75,10 @@ export function ApiV1ChatsChatIdMessagesPostRequestFromJSONTyped(json: any, igno
         'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'mime': !exists(json, 'mime') ? undefined : json['mime'],
-        'replyToId': !exists(json, 'reply_to_id') ? undefined : json['reply_to_id'],
     };
 }
 
-export function ApiV1ChatsChatIdMessagesPostRequestToJSON(value?: ApiV1ChatsChatIdMessagesPostRequest | null): any {
+export function ApiV1ChatsChatIdMessagesMessageIdPatchRequestToJSON(value?: ApiV1ChatsChatIdMessagesMessageIdPatchRequest | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -99,7 +92,6 @@ export function ApiV1ChatsChatIdMessagesPostRequestToJSON(value?: ApiV1ChatsChat
         'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
         'mime': value.mime,
-        'reply_to_id': value.replyToId,
     };
 }
 

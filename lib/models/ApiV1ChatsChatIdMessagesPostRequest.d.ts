@@ -45,6 +45,12 @@ export interface ApiV1ChatsChatIdMessagesPostRequest {
      * @memberof ApiV1ChatsChatIdMessagesPostRequest
      */
     mime?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ApiV1ChatsChatIdMessagesPostRequest
+     */
+    replyToId?: string;
 }
 /**
  * Check if a given object implements the ApiV1ChatsChatIdMessagesPostRequest interface.

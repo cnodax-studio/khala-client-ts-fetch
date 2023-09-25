@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ApiV1ChatsChatIdMessagesGet200Response, ApiV1ChatsChatIdMessagesPost200Response, ApiV1ChatsChatIdMessagesPostRequest } from '../models/index';
+import type { ApiV1ChatsChatIdMessagesGet200Response, ApiV1ChatsChatIdMessagesMessageIdPatchRequest, ApiV1ChatsChatIdMessagesPost200Response, ApiV1ChatsChatIdMessagesPostRequest } from '../models/index';
 export interface ApiV1ChatsChatIdMessagesGetRequest {
     chatId: string;
     limit: number;
@@ -27,6 +27,11 @@ export interface ApiV1ChatsChatIdMessagesMessageIdDeleteRequest {
 export interface ApiV1ChatsChatIdMessagesMessageIdGetRequest {
     chatId: string;
     messageId: string;
+}
+export interface ApiV1ChatsChatIdMessagesMessageIdPatchOperationRequest {
+    chatId: string;
+    messageId: string;
+    payload: ApiV1ChatsChatIdMessagesMessageIdPatchRequest;
 }
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
     chatId: string;
@@ -68,6 +73,14 @@ export declare class MessagingApi extends runtime.BaseAPI {
      * Get message in specific chat
      */
     apiV1ChatsChatIdMessagesMessageIdGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response>;
+    /**
+     * Update specific message
+     */
+    apiV1ChatsChatIdMessagesMessageIdPatchRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdMessagesPost200Response>>;
+    /**
+     * Update specific message
+     */
+    apiV1ChatsChatIdMessagesMessageIdPatch(requestParameters: ApiV1ChatsChatIdMessagesMessageIdPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response>;
     /**
      * Possible crypt_algorithm: \"none\", \"aes-256-cbc\". Possible compress_algorithm: \"none\", \"zlib-deflate\". <br> Mime must be a valid mime type. Available mime type you cat find here: https://github.com/gabriel-vasile/mimetype/blob/master/supported_mimes.md
      * Send message in specific chat

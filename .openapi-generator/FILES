@@ -11,6 +11,7 @@ index.ts
 models/ApiV1ChatsChatIdInvitePost200Response.ts
 models/ApiV1ChatsChatIdInvitePostRequest.ts
 models/ApiV1ChatsChatIdMessagesGet200Response.ts
+models/ApiV1ChatsChatIdMessagesMessageIdPatchRequest.ts
 models/ApiV1ChatsChatIdMessagesPost200Response.ts
 models/ApiV1ChatsChatIdMessagesPostRequest.ts
 models/ApiV1ChatsGet200Response.ts

@@ -85,6 +85,12 @@ export interface MessageMessage {
     mime?: string;
     /**
      *
+     * @type {MessageMessage}
+     * @memberof MessageMessage
+     */
+    replyTo?: MessageMessage;
+    /**
+     *
      * @type {AuthUser}
      * @memberof MessageMessage
      */

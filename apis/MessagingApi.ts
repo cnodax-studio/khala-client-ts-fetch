@@ -16,12 +16,15 @@
 import * as runtime from '../runtime';
 import type {
   ApiV1ChatsChatIdMessagesGet200Response,
+  ApiV1ChatsChatIdMessagesMessageIdPatchRequest,
   ApiV1ChatsChatIdMessagesPost200Response,
   ApiV1ChatsChatIdMessagesPostRequest,
 } from '../models/index';
 import {
     ApiV1ChatsChatIdMessagesGet200ResponseFromJSON,
     ApiV1ChatsChatIdMessagesGet200ResponseToJSON,
+    ApiV1ChatsChatIdMessagesMessageIdPatchRequestFromJSON,
+    ApiV1ChatsChatIdMessagesMessageIdPatchRequestToJSON,
     ApiV1ChatsChatIdMessagesPost200ResponseFromJSON,
     ApiV1ChatsChatIdMessagesPost200ResponseToJSON,
     ApiV1ChatsChatIdMessagesPostRequestFromJSON,
@@ -47,6 +50,12 @@ export interface ApiV1ChatsChatIdMessagesMessageIdDeleteRequest {
 export interface ApiV1ChatsChatIdMessagesMessageIdGetRequest {
     chatId: string;
     messageId: string;
+}
+
+export interface ApiV1ChatsChatIdMessagesMessageIdPatchOperationRequest {
+    chatId: string;
+    messageId: string;
+    payload: ApiV1ChatsChatIdMessagesMessageIdPatchRequest;
 }
 
 export interface ApiV1ChatsChatIdMessagesPostOperationRequest {
@@ -219,6 +228,51 @@ export class MessagingApi extends runtime.BaseAPI {
      */
     async apiV1ChatsChatIdMessagesMessageIdGet(requestParameters: ApiV1ChatsChatIdMessagesMessageIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response> {
         const response = await this.apiV1ChatsChatIdMessagesMessageIdGetRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Update specific message
+     */
+    async apiV1ChatsChatIdMessagesMessageIdPatchRaw(requestParameters: ApiV1ChatsChatIdMessagesMessageIdPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1ChatsChatIdMessagesPost200Response>> {
+        if (requestParameters.chatId === null || requestParameters.chatId === undefined) {
+            throw new runtime.RequiredError('chatId','Required parameter requestParameters.chatId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdPatch.');
+        }
+
+        if (requestParameters.messageId === null || requestParameters.messageId === undefined) {
+            throw new runtime.RequiredError('messageId','Required parameter requestParameters.messageId was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdPatch.');
+        }
+
+        if (requestParameters.payload === null || requestParameters.payload === undefined) {
+            throw new runtime.RequiredError('payload','Required parameter requestParameters.payload was null or undefined when calling apiV1ChatsChatIdMessagesMessageIdPatch.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+        }
+
+        const response = await this.request({
+            path: `/api/v1/chats/{chat_id}/messages/{message_id}`.replace(`{${"chat_id"}}`, encodeURIComponent(String(requestParameters.chatId))).replace(`{${"message_id"}}`, encodeURIComponent(String(requestParameters.messageId))),
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiV1ChatsChatIdMessagesMessageIdPatchRequestToJSON(requestParameters.payload),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1ChatsChatIdMessagesPost200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Update specific message
+     */
+    async apiV1ChatsChatIdMessagesMessageIdPatch(requestParameters: ApiV1ChatsChatIdMessagesMessageIdPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1ChatsChatIdMessagesPost200Response> {
+        const response = await this.apiV1ChatsChatIdMessagesMessageIdPatchRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
