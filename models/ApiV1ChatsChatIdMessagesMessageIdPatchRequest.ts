@@ -43,12 +43,6 @@ export interface ApiV1ChatsChatIdMessagesMessageIdPatchRequest {
      * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     cryptAlgorithm?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
-     */
-    mime?: string;
 }
 
 /**
@@ -74,7 +68,6 @@ export function ApiV1ChatsChatIdMessagesMessageIdPatchRequestFromJSONTyped(json:
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
         'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
-        'mime': !exists(json, 'mime') ? undefined : json['mime'],
     };
 }
 
@@ -91,7 +84,6 @@ export function ApiV1ChatsChatIdMessagesMessageIdPatchRequestToJSON(value?: ApiV
         'compress_algorithm': value.compressAlgorithm,
         'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
-        'mime': value.mime,
     };
 }
 

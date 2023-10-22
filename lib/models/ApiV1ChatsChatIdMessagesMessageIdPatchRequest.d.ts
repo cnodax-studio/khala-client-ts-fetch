@@ -39,12 +39,6 @@ export interface ApiV1ChatsChatIdMessagesMessageIdPatchRequest {
      * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
      */
     cryptAlgorithm?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ApiV1ChatsChatIdMessagesMessageIdPatchRequest
-     */
-    mime?: string;
 }
 /**
  * Check if a given object implements the ApiV1ChatsChatIdMessagesMessageIdPatchRequest interface.

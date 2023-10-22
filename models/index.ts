@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './ApiV1ChatsChatIdFilesPut200Response';
 export * from './ApiV1ChatsChatIdInvitePost200Response';
 export * from './ApiV1ChatsChatIdInvitePostRequest';
 export * from './ApiV1ChatsChatIdMessagesGet200Response';
@@ -29,6 +30,8 @@ export * from './AuthPushSubscriptionType';
 export * from './AuthSession';
 export * from './AuthUser';
 export * from './ChatChat';
+export * from './FileAccessor';
+export * from './FileMeta';
 export * from './Get200Response';
 export * from './Get200ResponseAllOfData';
 export * from './Get404Response';

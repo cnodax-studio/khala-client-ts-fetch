@@ -11,6 +11,7 @@
  */
 import type { AuthUser } from './AuthUser';
 import type { ChatChat } from './ChatChat';
+import type { FileMeta } from './FileMeta';
 /**
  *
  * @export
@@ -53,6 +54,12 @@ export interface MessageMessage {
      * @memberof MessageMessage
      */
     date?: string;
+    /**
+     *
+     * @type {FileMeta}
+     * @memberof MessageMessage
+     */
+    file?: FileMeta;
     /**
      *
      * @type {string}

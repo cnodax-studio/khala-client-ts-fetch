@@ -1,6 +1,7 @@
 apis/AuthApi.ts
 apis/ChatApi.ts
 apis/EventsApi.ts
+apis/FileApi.ts
 apis/MessagingApi.ts
 apis/MiscApi.ts
 apis/OtsApi.ts
@@ -8,6 +9,7 @@ apis/PushApi.ts
 apis/UserApi.ts
 apis/index.ts
 index.ts
+models/ApiV1ChatsChatIdFilesPut200Response.ts
 models/ApiV1ChatsChatIdInvitePost200Response.ts
 models/ApiV1ChatsChatIdInvitePostRequest.ts
 models/ApiV1ChatsChatIdMessagesGet200Response.ts
@@ -37,6 +39,8 @@ models/AuthPushSubscriptionType.ts
 models/AuthSession.ts
 models/AuthUser.ts
 models/ChatChat.ts
+models/FileAccessor.ts
+models/FileMeta.ts
 models/Get200Response.ts
 models/Get200ResponseAllOfData.ts
 models/Get404Response.ts

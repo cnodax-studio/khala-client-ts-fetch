@@ -44,7 +44,7 @@ export interface ApiV1ChatsChatIdMessagesPostRequest {
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPostRequest
      */
-    mime?: string;
+    fileId?: string;
     /**
      *
      * @type {string}

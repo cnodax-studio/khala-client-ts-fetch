@@ -48,7 +48,7 @@ export interface ApiV1ChatsChatIdMessagesPostRequest {
      * @type {string}
      * @memberof ApiV1ChatsChatIdMessagesPostRequest
      */
-    mime?: string;
+    fileId?: string;
     /**
      * 
      * @type {string}
@@ -80,7 +80,7 @@ export function ApiV1ChatsChatIdMessagesPostRequestFromJSONTyped(json: any, igno
         'compressAlgorithm': !exists(json, 'compress_algorithm') ? undefined : json['compress_algorithm'],
         'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
-        'mime': !exists(json, 'mime') ? undefined : json['mime'],
+        'fileId': !exists(json, 'file_id') ? undefined : json['file_id'],
         'replyToId': !exists(json, 'reply_to_id') ? undefined : json['reply_to_id'],
     };
 }
@@ -98,7 +98,7 @@ export function ApiV1ChatsChatIdMessagesPostRequestToJSON(value?: ApiV1ChatsChat
         'compress_algorithm': value.compressAlgorithm,
         'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
-        'mime': value.mime,
+        'file_id': value.fileId,
         'reply_to_id': value.replyToId,
     };
 }

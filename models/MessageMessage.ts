@@ -25,6 +25,12 @@ import {
     ChatChatFromJSONTyped,
     ChatChatToJSON,
 } from './ChatChat';
+import type { FileMeta } from './FileMeta';
+import {
+    FileMetaFromJSON,
+    FileMetaFromJSONTyped,
+    FileMetaToJSON,
+} from './FileMeta';
 
 /**
  * 
@@ -68,6 +74,12 @@ export interface MessageMessage {
      * @memberof MessageMessage
      */
     date?: string;
+    /**
+     * 
+     * @type {FileMeta}
+     * @memberof MessageMessage
+     */
+    file?: FileMeta;
     /**
      * 
      * @type {string}
@@ -157,6 +169,7 @@ export function MessageMessageFromJSONTyped(json: any, ignoreDiscriminator: bool
         'content': !exists(json, 'content') ? undefined : json['content'],
         'cryptAlgorithm': !exists(json, 'crypt_algorithm') ? undefined : json['crypt_algorithm'],
         'date': !exists(json, 'date') ? undefined : json['date'],
+        'file': !exists(json, 'file') ? undefined : FileMetaFromJSON(json['file']),
         'id': !exists(json, 'id') ? undefined : json['id'],
         'isDeleted': !exists(json, 'is_deleted') ? undefined : json['is_deleted'],
         'isEdited': !exists(json, 'is_edited') ? undefined : json['is_edited'],
@@ -182,6 +195,7 @@ export function MessageMessageToJSON(value?: MessageMessage | null): any {
         'content': value.content,
         'crypt_algorithm': value.cryptAlgorithm,
         'date': value.date,
+        'file': FileMetaToJSON(value.file),
         'id': value.id,
         'is_deleted': value.isDeleted,
         'is_edited': value.isEdited,
